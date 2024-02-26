@@ -6,7 +6,7 @@ const useStyles = makeStyles()((theme) => {
   return {
     searchBar: {
       borderRadius: theme.spacing(1),
-      backgroundColor: theme.palette.primary.main,
+      border: theme.palette.primary.main,
       '& .MuiOutlinedInput-input': {
         padding: theme.spacing(1),
       },
