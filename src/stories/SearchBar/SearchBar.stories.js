@@ -1,12 +1,14 @@
-import { SearchBar } from './SearchBar';
+import SearchBar from './SearchBar';
+import { SearchRounded } from '@mui/icons-material';
 
 export default {
   component: SearchBar,
 };
 
-export const Primary = {
+export const PrimarySearchBar = {
   args: {
     label: 'Search',
-    primary: true,
+    placeholder: 'Search through your active items',
+    startIcon: <SearchRounded />,
   },
 };
