@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from '@mui/material';
+import { Box, Container } from '@mui/material';
 import { useGetVersionDetailsQuery } from './services/version';
 import SearchTitleBar from './stories/SearchTitleBar/SearchTitleBar';
 
@@ -8,9 +8,9 @@ const App = () => {
 
   console.log(data, error, isLoading);
   return (
-    <Box>
+    <Container maxWidth='xl'>
       <SearchTitleBar />
-    </Box>
+    </Container>
   );
 };
 
