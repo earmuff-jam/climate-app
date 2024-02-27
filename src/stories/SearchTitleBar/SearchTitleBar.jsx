@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box } from '@mui/material';
+import Heading from '../Heading/Heading';
 import SearchBar from '../SearchBar/SearchBar';
 import { SearchRounded } from '@mui/icons-material';
-import HeadingTitle from '../HeadingTitle/HeadingTitle';
 
 const SearchTitleBar = () => {
   const test = 'test';
@@ -16,7 +16,7 @@ const SearchTitleBar = () => {
         justifyContent: 'space-between',
       }}
     >
-      <HeadingTitle title={'Climate'} />
+      <Heading title={'Climate'} subtitle={'Simple Inventory Management'} />
       <SearchBar
         label={''}
         placeholder={'Search'}

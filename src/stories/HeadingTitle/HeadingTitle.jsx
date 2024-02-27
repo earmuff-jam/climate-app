@@ -5,7 +5,10 @@ import { Box, Typography } from '@mui/material';
 const useStyles = makeStyles()((theme) => {
   return {
     root: {
-      fontSize: theme.spacing(4),
+      textTransform: 'uppercase',
+      fontWeight: 'bold',
+      fontSize: '2.125rem',
+      fontFamily: 'Poppins, sans-serif',
       color: theme.palette.primary.main,
     },
   };
@@ -15,7 +18,9 @@ const HeadingTitle = ({ title }) => {
   const { classes } = useStyles();
   return (
     <Box>
-      <Typography className={classes.root}>{title}</Typography>
+      <Typography variant='h3' className={classes.root}>
+        {title}
+      </Typography>
     </Box>
   );
 };
