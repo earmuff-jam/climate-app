@@ -1,6 +1,6 @@
-import lightTheme from '../../theme';
-import { ThemeProvider } from '@mui/material';
-import HeadingToggle from './HeadingToggle';
+import lightTheme from "../../theme";
+import { ThemeProvider } from "@mui/material";
+import HeadingToggle from "./HeadingToggle";
 
 export default {
   component: HeadingToggle,
@@ -15,6 +15,7 @@ export default {
 
 export const PrimaryHeadingToggle = {
   args: {
-    text: 'Simple Inventory Management',
+    drawerOpen: true,
+    handleDrawerClose: () => {},
   },
 };

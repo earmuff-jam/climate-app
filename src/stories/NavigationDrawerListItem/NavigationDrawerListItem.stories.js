@@ -1,11 +1,13 @@
 import lightTheme from "../../theme";
 import { ThemeProvider } from "@mui/material";
+import { CottageRounded } from "@mui/icons-material";
+import { withRouter } from "storybook-addon-react-router-v6";
 import NavigationDrawerListItem from "./NavigationDrawerListItem";
-import CottageRoundedIcon from "@mui/icons-material/CottageRounded";
 
 export default {
   component: NavigationDrawerListItem,
   decorators: [
+    withRouter,
     (Story) => (
       <ThemeProvider theme={lightTheme}>
         <Story />
@@ -19,10 +21,10 @@ export const PrimaryNavigationDrawerListItemDrawerOpen = {
     item: {
       id: 1,
       title: "Home items",
-      description: "home related stuffs..",
-      lastUpdatedAt: "use day.js",
+      description: "regular household items",
+      lastUpdatedAt: "2022-06-16T16:41:57+02:00",
       lastUpdatedBy: "dogs_with_kookie",
-      icon: <CottageRoundedIcon />,
+      icon: <CottageRounded />,
     },
     retainDisplayTextField: true,
     drawerOpen: true,
@@ -33,10 +35,10 @@ export const PrimaryNavigationDrawerListItemDrawerClosed = {
     item: {
       id: 1,
       title: "Home items",
-      description: "home related stuffs..",
-      lastUpdatedAt: "use day.js",
+      description: "regular household items",
+      lastUpdatedAt: "2022-06-16T16:41:57+02:00",
       lastUpdatedBy: "dogs_with_kookie",
-      icon: <CottageRoundedIcon />,
+      icon: <CottageRounded />,
     },
     retainDisplayTextField: true,
     drawerOpen: false,

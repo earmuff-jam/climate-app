@@ -1,108 +1,73 @@
-import React from 'react';
+import React from "react";
 import {
   ListItem,
   ListItemButton,
   ListItemIcon,
   Typography,
   ListItemText,
-  Avatar,
-} from '@mui/material';
-import { Link } from 'react-router-dom';
-import { makeStyles } from 'tss-react/mui';
+  Box,
+} from "@mui/material";
+
+import dayjs from 'dayjs';
+import { Link } from "react-router-dom";
+import { makeStyles } from "tss-react/mui";
 
 const useStyles = makeStyles()((theme) => {
   return {
     buttonRoot: {
-      textTransform: 'uppercase',
-      fontWeight: 'bold',
-      fontSize: '0.985rem',
-      color: theme.palette.secondary.main,
+      minWidth: theme.spacing(4),
     },
-    categoryIcon: {
-      padding: theme.spacing(0),
-      margin: theme.spacing(0),
-    },
-    generalText: {
-      fontSize: '0.625rem',
+    link: {
       color: theme.palette.common.black,
-    },
-    drawerRoot: {
-      '& .MuiListItemText-root ': {
-        padding: 0,
-        margin: 0,
-      },
-    },
-    titleText: {
-      fontSize: '0.925rem',
-      color: theme.palette.common.black,
-    },
-    rootAvatar: {
-      width: '2rem',
-      height: '2rem',
-      color: theme.palette.titleTextPrimary.main,
-      backgroundColor: theme.palette.secondary.main,
     },
   };
 });
 
-const NavigationDrawerListItem = ({ item, drawerOpen, isCategory }) => {
+const NavigationDrawerListItem = ({
+  item,
+  drawerOpen,
+  retainDisplayTextField,
+}) => {
   const { classes } = useStyles();
   const { id, title, description, icon, lastUpdatedAt, lastUpdatedBy, to } =
     item;
+
+  let secondaryText = description;
+  if (!retainDisplayTextField && drawerOpen) {
+    secondaryText = (
+      <>
+        <Typography
+          sx={{ display: "inline" }}
+          component="span"
+          variant="caption"
+        >
+          {lastUpdatedBy}{" "}
+        </Typography>
+
+        <Typography
+          sx={{ display: "inline" }}
+          component="span"
+          variant="caption"
+        >
+          - {dayjs(lastUpdatedAt).fromNow()}
+        </Typography>
+      </>
+    );
+  }
+
   return (
-    <ListItem
-      key={id}
-      component={Link}
-      to={to}
-      disablePadding
-      dense
-      classes={{ root: classes.drawerRoot }}
-    >
+    <ListItem key={id} component={Link} to={to} disablePadding>
       <ListItemButton>
         <ListItemIcon classes={{ root: classes.buttonRoot }}>
-          {icon || (
-            <Avatar classes={{ root: classes.rootAvatar }}>{title[0]}</Avatar>
-          )}
+          {icon}
         </ListItemIcon>
-        {drawerOpen ? (
+        {drawerOpen && (
           <ListItemText
-            classes={{
-              primary: classes.titleText,
-              secondary: classes.generalText,
-            }}
+            classes={{ primary: classes.link }}
             primary={title}
-            secondary={
-              isCategory ? (
-                description
-              ) : (
-                <>
-                  <Typography
-                    className={classes.generalText}
-                    variant='caption'
-                    disableGutters
-                  >
-                    {description}
-                  </Typography>
-                  <br />
-                  <Typography
-                    className={classes.generalText}
-                    variant='caption'
-                    disableGutters
-                  >
-                    {lastUpdatedBy}{' '}
-                  </Typography>
-                  <Typography
-                    className={classes.generalText}
-                    variant='caption'
-                    disableGutters
-                  >
-                    - {lastUpdatedAt}
-                  </Typography>
-                </>
-              )
-            }
+            secondary={secondaryText}
           />
-        ) : null}
+        )}
       </ListItemButton>
     </ListItem>
   );

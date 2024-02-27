@@ -25,11 +25,7 @@ const useStyles = makeStyles()((theme) => {
   };
 });
 
-const NavigationDrawerTitle = ({
-  title,
-  iconButtonLabel,
-  hideAddOn = false,
-}) => {
+const NavigationDrawerTitle = ({ title, iconButtonLabel }) => {
   const { classes } = useStyles();
 
   const [name, setName] = useState('');
@@ -51,20 +47,18 @@ const NavigationDrawerTitle = ({
       <Typography className={[classes.text, classes.primaryColor].join(' ')}>
         {title}
       </Typography>
-      {!hideAddOn && (
-        <HeadingIconButton
-          className={iconButtonLabel}
-          open={open}
-          value={name}
-          label={iconButtonLabel}
-          variant={'standard'}
-          handleChange={handleChange}
-          toggleOpen={toggleOpen}
-          icon={<AddRounded />}
-          primaryInputPropsIconButtonHandleClose={submit}
-          secondaryInputPropsIconButtonHandleClose={handleClose}
-        />
-      )}
+      <HeadingIconButton
+        className={iconButtonLabel}
+        open={open}
+        value={name}
+        label={iconButtonLabel}
+        variant={'standard'}
+        handleChange={handleChange}
+        toggleOpen={toggleOpen}
+        icon={<AddRounded />}
+        primaryInputPropsIconButtonHandleClose={submit}
+        secondaryInputPropsIconButtonHandleClose={handleClose}
+      />
     </Box>
   );
 };

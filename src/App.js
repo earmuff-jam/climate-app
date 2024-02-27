@@ -7,11 +7,10 @@ import {
   SoupKitchenRounded,
 } from '@mui/icons-material';
 
-import HomePage from './stories/Home/HomePage';
-import Profile from './stories/Profile/Profile';
 import { useGetVersionDetailsQuery } from './services/version';
 import { Box, CssBaseline, useMediaQuery, useTheme } from '@mui/material';
 import NavigationDrawer from './stories/NavigationDrawer/NavigationDrawer';
+import LandingPage from './stories/Home/LandingPage';
 
 const App = () => {
   const theme = useTheme();
@@ -30,7 +29,7 @@ const App = () => {
         id: 1,
         title: 'Home items',
         description: 'home related stuffs..',
-        to: '/tag',
+        to: '/',
         lastUpdatedAt: 'use day.js',
         lastUpdatedBy: 'dogs_with_kookie',
         icon: <CottageRounded />,
@@ -39,25 +38,25 @@ const App = () => {
         id: 2,
         title: 'Kitchen items',
         description: 'Click to edit description',
-        to: '/tag',
+        to: '/kitchen',
         lastUpdatedAt: 'use day.js',
         lastUpdatedBy: 'johny1443',
         icon: <SoupKitchenRounded />,
       },
       {
         id: 3,
-        title: 'Bedroom items',
+        title: 'School supplies',
         description: 'Click to edit description',
-        to: '/tag',
+        to: '/school',
         lastUpdatedAt: 'use day.js',
         lastUpdatedBy: 'dogs_with_kookie',
         icon: <SchoolRounded />,
       },
       {
         id: 4,
-        title: 'Garage items',
+        title: 'Garage Items',
         description: 'Click to edit description',
-        to: '/tag',
+        to: '/garage',
         lastUpdatedAt: 'use day.js',
         lastUpdatedBy: 'xxmariah_whitney_2009xx',
         icon: <GarageRounded />,
@@ -104,16 +103,9 @@ const App = () => {
         />
         <Box sx={{ flexGrow: 1, p: 3 }}>
           <Routes>
-            <Route exact path='/' element={<HomePage />} />
-            <Route
-              path='/tag'
-              element={<Box>list of tag related stuffs here</Box>}
-            />
-            <Route
-              path='/categories'
-              element={<Box>list of category related stuff here</Box>}
-            />
-            <Route path='/profile' element={<Profile />} />
+            <Route exact path='/' element={<LandingPage />} />
+            <Route path='/kitchen' element={<Box>kitchen</Box>} />
+            <Route path='/garage' element={<Box>garage</Box>} />
           </Routes>
         </Box>
       </Box>
