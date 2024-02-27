@@ -1,9 +1,9 @@
 import lightTheme from '../../theme';
 import { ThemeProvider } from '@mui/material';
-import SearchTitleBar from './SearchTitleBar';
+import HeadingClosed from './HeadingClosed';
 
 export default {
-  component: SearchTitleBar,
+  component: HeadingClosed,
   decorators: [
     (Story) => (
       <ThemeProvider theme={lightTheme}>
@@ -13,6 +13,9 @@ export default {
   ],
 };
 
-export const PrimarySearchTitleBar = {
-  args: {},
+export const PrimaryHeadingClosed = {
+  args: {
+    title: 'Climate',
+    subtitle: 'Simple Inventory Management',
+  },
 };

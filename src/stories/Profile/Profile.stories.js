@@ -1,20 +1,19 @@
-import { defaultTheme } from "../../theme";
+import Profile from './Profile';
+import lightTheme from '../../theme';
 import { ThemeProvider } from '@mui/material';
 
-import HeadingSubtitle from './HeadingSubtitle';
-
 export default {
-  component: HeadingSubtitle,
+  component: Profile,
   decorators: [
     (Story) => (
-      <ThemeProvider theme={defaultTheme}>
+      <ThemeProvider theme={lightTheme}>
         <Story />
       </ThemeProvider>
     ),
   ],
 };
 
-export const PrimaryHeadingSubtitle = {
+export const PrimaryProfile = {
   args: {
     text: 'Simple Inventory Management',
   },

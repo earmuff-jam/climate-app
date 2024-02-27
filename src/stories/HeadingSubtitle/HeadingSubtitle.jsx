@@ -1,11 +1,27 @@
-import React from 'react';
-import { Box, Typography } from '@mui/material';
+import React from "react";
+import { makeStyles } from "tss-react/mui";
+import { Typography } from "@mui/material";
 
-const HeadingSubtitle = ({ text }) => {
+const useStyles = makeStyles()((theme) => {
+  return {
+    root: {
+      fontSize: "0.725rem",
+      color: theme.palette.titleTextPrimary.main,
+    },
+  };
+});
+
+const HeadingSubtitle = ({ text, subtitleVariant, gutterBottom }) => {
+  const { classes } = useStyles();
+
   return (
-    <Box>
-      <Typography variant='caption'>{text}</Typography>
-    </Box>
+    <Typography
+      variant={subtitleVariant}
+      gutterBottom={gutterBottom}
+      className={classes.root}
+    >
+      {text}
+    </Typography>
   );
 };
 

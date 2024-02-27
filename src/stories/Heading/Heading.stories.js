@@ -1,12 +1,12 @@
-import lightTheme from '../../theme';
-import { ThemeProvider } from '@mui/material';
-import Heading from './Heading';
+import Heading from "./Heading";
+import { defaultTheme } from "../../theme";
+import { ThemeProvider } from "@mui/material";
 
 export default {
   component: Heading,
   decorators: [
     (Story) => (
-      <ThemeProvider theme={lightTheme}>
+      <ThemeProvider theme={defaultTheme}>
         <Story />
       </ThemeProvider>
     ),
@@ -15,7 +15,7 @@ export default {
 
 export const PrimaryHeading = {
   args: {
-    title: 'Climate',
-    subtitle: 'Simple Inventory Management',
+    title: "Climate",
+    subtitle: "Simple Inventory Management",
   },
 };
