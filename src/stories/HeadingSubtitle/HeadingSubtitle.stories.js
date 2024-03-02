@@ -1,4 +1,4 @@
-import { defaultTheme } from "../../theme";
+import { defaultTheme } from '../../theme';
 import { ThemeProvider } from '@mui/material';
 
 import HeadingSubtitle from './HeadingSubtitle';
@@ -16,6 +16,9 @@ export default {
 
 export const PrimaryHeadingSubtitle = {
   args: {
-    text: 'Simple Inventory Management',
+    // extra decorators for test purposes only
+    text: 'Simple inventory management for your needs',
+    subtitleVariant: 'caption',
+    gutterBottom: true,
   },
 };

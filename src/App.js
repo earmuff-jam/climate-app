@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Box, CssBaseline, useMediaQuery, useTheme } from '@mui/material';
 import {
   SchoolRounded,
   GarageRounded,
@@ -7,10 +8,10 @@ import {
   SoupKitchenRounded,
 } from '@mui/icons-material';
 
+import dayjs from 'dayjs';
 import HomePage from './stories/Home/HomePage';
 import Profile from './stories/Profile/Profile';
 import { useGetVersionDetailsQuery } from './services/version';
-import { Box, CssBaseline, useMediaQuery, useTheme } from '@mui/material';
 import NavigationDrawer from './stories/NavigationDrawer/NavigationDrawer';
 
 const App = () => {
@@ -30,8 +31,8 @@ const App = () => {
         id: 1,
         title: 'Home items',
         description: 'home related stuffs..',
-        to: '/tag',
-        lastUpdatedAt: 'use day.js',
+        to: '/',
+        lastUpdatedAt: dayjs().toDate(),
         lastUpdatedBy: 'dogs_with_kookie',
         icon: <CottageRounded />,
       },
@@ -39,8 +40,8 @@ const App = () => {
         id: 2,
         title: 'Kitchen items',
         description: 'Click to edit description',
-        to: '/tag',
-        lastUpdatedAt: 'use day.js',
+        to: '/kitchen',
+        lastUpdatedAt: dayjs().toDate(),
         lastUpdatedBy: 'johny1443',
         icon: <SoupKitchenRounded />,
       },
@@ -48,8 +49,8 @@ const App = () => {
         id: 3,
         title: 'Bedroom items',
         description: 'Click to edit description',
-        to: '/tag',
-        lastUpdatedAt: 'use day.js',
+        to: '/school',
+        lastUpdatedAt: dayjs().toDate(),
         lastUpdatedBy: 'dogs_with_kookie',
         icon: <SchoolRounded />,
       },
@@ -57,8 +58,8 @@ const App = () => {
         id: 4,
         title: 'Garage items',
         description: 'Click to edit description',
-        to: '/tag',
-        lastUpdatedAt: 'use day.js',
+        to: '/garage',
+        lastUpdatedAt: dayjs().toDate(),
         lastUpdatedBy: 'xxmariah_whitney_2009xx',
         icon: <GarageRounded />,
       },
@@ -69,7 +70,7 @@ const App = () => {
         title: 'Pantry',
         description: 'kitchen pantry shelf items',
         to: '/categories',
-        lastUpdatedAt: 'use day.js',
+        lastUpdatedAt: dayjs().toDate(),
         lastUpdatedBy: 'dogs_with_kookie',
       },
       {
@@ -77,7 +78,7 @@ const App = () => {
         title: 'Cleaning Cupboard',
         description: 'Cleaning supplies storage unit',
         to: '/categories',
-        lastUpdatedAt: 'use day.js',
+        lastUpdatedAt: dayjs().toDate(),
         lastUpdatedBy: 'dogs_with_kookie',
       },
       {
@@ -85,7 +86,7 @@ const App = () => {
         title: 'Laundry and Guest Closet',
         description: 'Click to edit description',
         to: '/categories',
-        lastUpdatedAt: 'use day.js',
+        lastUpdatedAt: dayjs().toDate(),
         lastUpdatedBy: 'dogs_with_kookie',
       },
     ],

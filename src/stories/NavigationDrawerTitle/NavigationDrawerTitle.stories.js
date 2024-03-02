@@ -17,6 +17,7 @@ export const PrimaryNavigationDrawerTitle = {
   args: {
     title: 'tags',
     iconButtonLabel: 'Add new tag',
+    hideAddOn: false,
   },
 };
 
@@ -24,5 +25,6 @@ export const SecondaryNavigationDrawerTitle = {
   args: {
     title: 'categories',
     iconButtonLabel: 'Add new category',
+    hideAddOn: false,
   },
 };

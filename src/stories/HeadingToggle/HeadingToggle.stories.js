@@ -15,6 +15,7 @@ export default {
 
 export const PrimaryHeadingToggle = {
   args: {
-    text: 'Simple Inventory Management',
+    drawerOpen: false,
+    handleDrawerOpen: () => {},
   },
 };

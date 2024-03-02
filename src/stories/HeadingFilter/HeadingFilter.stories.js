@@ -1,10 +1,12 @@
 import lightTheme from '../../theme';
-import { ThemeProvider } from '@mui/material';
 import HeadingFilter from './HeadingFilter';
+import { ThemeProvider } from '@mui/material';
+import { withRouter } from 'storybook-addon-react-router-v6';
 
 export default {
   component: HeadingFilter,
   decorators: [
+    withRouter,
     (Story) => (
       <ThemeProvider theme={lightTheme}>
         <Story />
@@ -15,7 +17,7 @@ export default {
 
 export const PrimaryHeadingFilter = {
   args: {
-    title: 'Climate',
-    subtitle: 'Simple Inventory Management',
+    // test as true to prevent error element bubbling
+    redirect: true,
   },
 };
