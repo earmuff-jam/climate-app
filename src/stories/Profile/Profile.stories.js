@@ -14,7 +14,5 @@ export default {
 };
 
 export const PrimaryProfile = {
-  args: {
-    text: 'Simple Inventory Management',
-  },
+  args: {},
 };

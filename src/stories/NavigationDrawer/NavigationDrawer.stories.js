@@ -1,14 +1,19 @@
 import lightTheme from '../../theme';
 import { ThemeProvider } from '@mui/material';
 import NavigationDrawer from './NavigationDrawer';
-import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
-import GarageRoundedIcon from '@mui/icons-material/GarageRounded';
-import CottageRoundedIcon from '@mui/icons-material/CottageRounded';
-import SoupKitchenRoundedIcon from '@mui/icons-material/SoupKitchenRounded';
+import { withRouter } from 'storybook-addon-react-router-v6';
+
+import {
+  SchoolRounded,
+  GarageRounded,
+  CottageRounded,
+  SoupKitchenRounded,
+} from '@mui/icons-material';
 
 export default {
   component: NavigationDrawer,
   decorators: [
+    withRouter,
     (Story) => (
       <ThemeProvider theme={lightTheme}>
         <Story />
@@ -17,7 +22,72 @@ export default {
   ],
 };
 
-export const PrimaryNavigationDrawer = {
+export const PrimaryNavigationDrawerOpen = {
+  args: {
+    drawerOpen: true,
+    handleDrawerClose: () => {},
+    handleDrawerOpen: () => {},
+    tags: [
+      {
+        id: 1,
+        title: 'Home items',
+        description: 'home related stuffs..',
+        lastUpdatedAt: 'use day.js',
+        lastUpdatedBy: 'dogs_with_kookie',
+        icon: <CottageRounded />,
+      },
+      {
+        id: 2,
+        title: 'Kitchen items',
+        description: 'Click to edit description',
+        lastUpdatedAt: 'use day.js',
+        lastUpdatedBy: 'johny1443',
+        icon: <SoupKitchenRounded />,
+      },
+      {
+        id: 3,
+        title: 'School supplies',
+        description: 'Click to edit description',
+        lastUpdatedAt: 'use day.js',
+        lastUpdatedBy: 'dogs_with_kookie',
+        icon: <SchoolRounded />,
+      },
+      {
+        id: 4,
+        title: 'Garage Items',
+        description: 'Click to edit description',
+        lastUpdatedAt: 'use day.js',
+        lastUpdatedBy: 'xxmariah_whitney_2009xx',
+        icon: <GarageRounded />,
+      },
+    ],
+    categories: [
+      {
+        id: 1,
+        title: 'Pantry',
+        description: 'kitchen pantry shelf items',
+        lastUpdatedAt: 'use day.js',
+        lastUpdatedBy: 'dogs_with_kookie',
+      },
+      {
+        id: 2,
+        title: 'Cleaning Cupboard',
+        description: 'Cleaning supplies storage unit',
+        lastUpdatedAt: 'use day.js',
+        lastUpdatedBy: 'dogs_with_kookie',
+      },
+      {
+        id: 3,
+        title: 'Laundry and Guest Closet',
+        description: 'Click to edit description',
+        lastUpdatedAt: 'use day.js',
+        lastUpdatedBy: 'dogs_with_kookie',
+      },
+    ],
+  },
+};
+
+export const PrimaryNavigationDrawerClose = {
   args: {
     drawerOpen: false,
     handleDrawerClose: () => {},
@@ -29,7 +99,7 @@ export const PrimaryNavigationDrawer = {
         description: 'home related stuffs..',
         lastUpdatedAt: 'use day.js',
         lastUpdatedBy: 'dogs_with_kookie',
-        icon: <CottageRoundedIcon />,
+        icon: <CottageRounded />,
       },
       {
         id: 2,
@@ -37,7 +107,7 @@ export const PrimaryNavigationDrawer = {
         description: 'Click to edit description',
         lastUpdatedAt: 'use day.js',
         lastUpdatedBy: 'johny1443',
-        icon: <SoupKitchenRoundedIcon />,
+        icon: <SoupKitchenRounded />,
       },
       {
         id: 3,
@@ -45,7 +115,7 @@ export const PrimaryNavigationDrawer = {
         description: 'Click to edit description',
         lastUpdatedAt: 'use day.js',
         lastUpdatedBy: 'dogs_with_kookie',
-        icon: <SchoolRoundedIcon />,
+        icon: <SchoolRounded />,
       },
       {
         id: 4,
@@ -53,7 +123,7 @@ export const PrimaryNavigationDrawer = {
         description: 'Click to edit description',
         lastUpdatedAt: 'use day.js',
         lastUpdatedBy: 'xxmariah_whitney_2009xx',
-        icon: <GarageRoundedIcon />,
+        icon: <GarageRounded />,
       },
     ],
     categories: [

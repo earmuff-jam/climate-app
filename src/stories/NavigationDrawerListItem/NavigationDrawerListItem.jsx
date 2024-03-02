@@ -7,8 +7,11 @@ import {
   ListItemText,
   Avatar,
 } from '@mui/material';
+
+import dayjs from 'dayjs';
 import { Link } from 'react-router-dom';
 import { makeStyles } from 'tss-react/mui';
+import * as relativeTime from 'dayjs/plugin/relativeTime';
 
 const useStyles = makeStyles()((theme) => {
   return {
@@ -45,10 +48,13 @@ const useStyles = makeStyles()((theme) => {
   };
 });
 
+dayjs.extend(relativeTime);
+
 const NavigationDrawerListItem = ({ item, drawerOpen, isCategory }) => {
   const { classes } = useStyles();
   const { id, title, description, icon, lastUpdatedAt, lastUpdatedBy, to } =
     item;
+
   return (
     <ListItem
       key={id}
@@ -76,27 +82,15 @@ const NavigationDrawerListItem = ({ item, drawerOpen, isCategory }) => {
                 description
               ) : (
                 <>
-                  <Typography
-                    className={classes.generalText}
-                    variant='caption'
-                    disableGutters
-                  >
+                  <Typography className={classes.generalText} variant='caption'>
                     {description}
                   </Typography>
                   <br />
-                  <Typography
-                    className={classes.generalText}
-                    variant='caption'
-                    disableGutters
-                  >
+                  <Typography className={classes.generalText} variant='caption'>
                     {lastUpdatedBy}{' '}
                   </Typography>
-                  <Typography
-                    className={classes.generalText}
-                    variant='caption'
-                    disableGutters
-                  >
-                    - {lastUpdatedAt}
+                  <Typography className={classes.generalText} variant='caption'>
+                    - {dayjs(lastUpdatedAt).fromNow()}
                   </Typography>
                 </>
               )

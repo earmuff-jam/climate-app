@@ -16,5 +16,6 @@ export default {
 export const PrimaryHeadingTitle = {
   args: {
     title: 'Climate',
+    titleVariant: 'outlined',
   },
 };
