@@ -1,24 +1,24 @@
-import React from 'react';
-import { makeStyles } from 'tss-react/mui';
-import { Box, Typography } from '@mui/material';
+import React from "react";
+import { makeStyles } from "tss-react/mui";
+import { Box, Typography } from "@mui/material";
 
 const useStyles = makeStyles()((theme) => {
   return {
     root: {
-      textTransform: 'uppercase',
-      fontWeight: 'bold',
-      fontSize: '2.125rem',
-      fontFamily: 'Poppins, sans-serif',
-      color: theme.palette.primary.main,
+      fontWeight: "bold",
+      fontSize: "1.825rem",
+      fontFamily: "Poppins, sans-serif",
+      color: theme.palette.titleTextPrimary.main,
+      alignSelf: 'flex-start',
     },
   };
 });
 
-const HeadingTitle = ({ title }) => {
+const HeadingTitle = ({ title, titleVariant }) => {
   const { classes } = useStyles();
   return (
     <Box>
-      <Typography variant='h3' className={classes.root}>
+      <Typography variant={titleVariant} className={classes.root}>
         {title}
       </Typography>
     </Box>

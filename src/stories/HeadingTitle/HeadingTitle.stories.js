@@ -1,12 +1,12 @@
-import { ThemeProvider } from '@mui/material';
 import HeadingTitle from './HeadingTitle';
-import lightTheme from '../../theme';
+import { defaultTheme } from '../../theme';
+import { ThemeProvider } from '@mui/material';
 
 export default {
   component: HeadingTitle,
   decorators: [
     (Story) => (
-      <ThemeProvider theme={lightTheme}>
+      <ThemeProvider theme={defaultTheme}>
         <Story />
       </ThemeProvider>
     ),
