@@ -1,14 +1,13 @@
-import React from "react";
-import { makeStyles } from "tss-react/mui";
-import { Box, Typography } from "@mui/material";
+import React from 'react';
+import { makeStyles } from 'tss-react/mui';
+import { Box, Typography } from '@mui/material';
 
 const useStyles = makeStyles()((theme) => {
   return {
     root: {
-      fontWeight: "bold",
-      fontSize: "1.825rem",
-      fontFamily: "Poppins, sans-serif",
-      color: theme.palette.titleTextPrimary.main,
+      fontWeight: 'bold',
+      fontSize: '1.825rem',
+      fontFamily: 'Poppins, sans-serif',
       alignSelf: 'flex-start',
     },
   };
