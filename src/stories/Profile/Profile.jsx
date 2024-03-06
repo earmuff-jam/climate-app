@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Box } from '@mui/material';
-import Heading from '../Heading/Heading';
 import { makeStyles } from 'tss-react/mui';
 import { CloseRounded, EditRounded } from '@mui/icons-material';
-import EditCategoryDetails from '../Categories/EditCategoryDetails';
-import ViewCategoryDetails from '../Categories/ViewCategoryDetails';
-import EditProfileDetails from '../ProfileDetails/EditProfileDetails';
-import ViewProfileDetails from '../ProfileDetails/ViewProfileDetails';
+import Heading from '../NavigationDrawer/Heading/Heading';
+import EditProfileDetails from './ProfileDetails/EditProfileDetails';
+import ViewProfileDetails from './ProfileDetails/ViewProfileDetails';
+import EditCategoryDetails from './Categories/EditCategoryDetails';
+import ViewCategoryDetails from './Categories/ViewCategoryDetails';
 
 const useStyles = makeStyles()((theme) => {
   return {

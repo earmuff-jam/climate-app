@@ -11,14 +11,14 @@ import {
   AccordionDetails,
 } from '@mui/material';
 
-import Heading from '../Heading/Heading';
 import MuiDrawer from '@mui/material/Drawer';
-import HeadingFilter from '../HeadingFilter/HeadingFilter';
-import HeadingToggle from '../HeadingToggle/HeadingToggle';
-import HeadingClosed from '../HeadingClosed/HeadingClosed';
 import { ArrowDropDownCircleRounded } from '@mui/icons-material';
-import NavigationDrawerTitle from '../NavigationDrawerTitle/NavigationDrawerTitle';
-import NavigationDrawerListItem from '../NavigationDrawerListItem/NavigationDrawerListItem';
+import Heading from './Heading/Heading';
+import HeadingFilter from './HeadingFilter/HeadingFilter';
+import HeadingToggle from './HeadingToggle/HeadingToggle';
+import HeadingClosed from './HeadingClosed/HeadingClosed';
+import NavigationDrawerTitle from './NavigationDrawerTitle/NavigationDrawerTitle';
+import NavigationDrawerListItem from './NavigationDrawerListItem/NavigationDrawerListItem';
 
 const drawerWidth = 300;
 
