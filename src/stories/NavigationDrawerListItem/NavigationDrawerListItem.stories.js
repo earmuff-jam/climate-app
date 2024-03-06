@@ -26,7 +26,7 @@ export const PrimaryNavigationDrawerListItemDrawerOpen = {
       lastUpdatedBy: 'dogs_with_kookie',
       icon: <CottageRounded />,
     },
-    isCategory: true,
+    isCategory: false,
     drawerOpen: true,
   },
 };

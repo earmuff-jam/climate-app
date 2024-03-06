@@ -1,12 +1,11 @@
-import React from "react";
-import { makeStyles } from "tss-react/mui";
-import { Typography } from "@mui/material";
+import React from 'react';
+import { makeStyles } from 'tss-react/mui';
+import { Typography } from '@mui/material';
 
 const useStyles = makeStyles()((theme) => {
   return {
     root: {
-      fontSize: "0.725rem",
-      color: theme.palette.titleTextPrimary.main,
+      fontSize: '0.725rem',
     },
   };
 });

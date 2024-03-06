@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from 'tss-react/mui';
-import MuiDrawer from '@mui/material/Drawer';
+
 import {
   Box,
   List,
@@ -12,38 +12,30 @@ import {
 } from '@mui/material';
 
 import Heading from '../Heading/Heading';
+import MuiDrawer from '@mui/material/Drawer';
 import HeadingFilter from '../HeadingFilter/HeadingFilter';
 import HeadingToggle from '../HeadingToggle/HeadingToggle';
-import NavigationDrawerTitle from '../NavigationDrawerTitle/NavigationDrawerTitle';
-import NavigationDrawerListItem from '../NavigationDrawerListItem/NavigationDrawerListItem';
-
 import HeadingClosed from '../HeadingClosed/HeadingClosed';
 import { ArrowDropDownCircleRounded } from '@mui/icons-material';
+import NavigationDrawerTitle from '../NavigationDrawerTitle/NavigationDrawerTitle';
+import NavigationDrawerListItem from '../NavigationDrawerListItem/NavigationDrawerListItem';
 
 const drawerWidth = 300;
 
 const useStyles = makeStyles()((theme) => {
   return {
-    container: {
-      width: drawerWidth,
-      flexShrink: theme.spacing(0),
-      [`& .MuiDrawer-paper`]: {
-        width: drawerWidth,
-        boxSizing: 'border-box',
-      },
-    },
     accordion: {
       margin: theme.spacing(0),
       '&.Mui-expanded': {
         margin: theme.spacing(0),
       },
-      '& .MuiAccordion-root': {
+      '& .MuiAccordion-container': {
         '&.Mui-expanded': {
           margin: theme.spacing(0),
         },
       },
     },
-    root: {
+    container: {
       display: 'flex',
       alignItems: 'center',
       backgroundColor: theme.palette.secondary.main,
@@ -51,6 +43,13 @@ const useStyles = makeStyles()((theme) => {
       padding: theme.spacing(0, 1),
       // necessary for content to be below app bar
       ...theme.mixins.toolbar,
+    },
+    rootTitleContainer: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      gap: theme.spacing(2),
     },
     list: {
       padding: theme.spacing(0),
@@ -111,17 +110,9 @@ const NavigationDrawer = ({
   return (
     <>
       <Drawer variant={'permanent'} open={drawerOpen}>
-        <Box className={classes.root}>
+        <Box className={classes.container}>
           {drawerOpen ? (
-            <Box
-              sx={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                gap: 3,
-              }}
-            >
+            <Box className={classes.rootTitleContainer}>
               <Heading
                 title={'Climate'}
                 titleVariant={'h3'}
