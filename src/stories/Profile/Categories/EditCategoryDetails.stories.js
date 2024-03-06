@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import lightTheme from '../../theme';
+import lightTheme from '../../../theme';
 import { ThemeProvider } from '@mui/material';
 import EditCategoryDetails from './EditCategoryDetails';
 import { withRouter } from 'storybook-addon-react-router-v6';
