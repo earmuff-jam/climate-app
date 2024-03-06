@@ -1,12 +1,12 @@
-import lightTheme from '../../theme';
+import lightTheme from '../../../theme';
 import { ThemeProvider } from '@mui/material';
-import EditProfileDetails from './EditProfileDetails';
 import {
   FaceRounded,
   PersonRounded,
   TodayRounded,
   WcRounded,
 } from '@mui/icons-material';
+import EditProfileDetails from './EditProfileDetails';
 
 export default {
   component: EditProfileDetails,

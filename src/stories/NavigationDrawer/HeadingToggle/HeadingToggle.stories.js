@@ -1,4 +1,5 @@
 import lightTheme from '../../../theme';
+
 import { ThemeProvider } from '@mui/material';
 import HeadingToggle from './HeadingToggle';
 

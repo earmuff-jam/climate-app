@@ -1,5 +1,5 @@
 import Heading from './Heading';
-import { defaultTheme } from '../../theme';
+import { defaultTheme } from '../../../theme';
 import { ThemeProvider } from '@mui/material';
 
 export default {

@@ -1,5 +1,6 @@
 import HeadingTitle from './HeadingTitle';
-import { defaultTheme } from '../../theme';
+import { defaultTheme } from '../../../theme';
+
 import { ThemeProvider } from '@mui/material';
 
 export default {

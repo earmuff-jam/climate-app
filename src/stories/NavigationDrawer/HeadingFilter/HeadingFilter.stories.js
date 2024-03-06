@@ -1,4 +1,4 @@
-import lightTheme from '../../theme';
+import lightTheme from '../../../theme';
 import HeadingFilter from './HeadingFilter';
 import { ThemeProvider } from '@mui/material';
 import { withRouter } from 'storybook-addon-react-router-v6';

@@ -1,4 +1,5 @@
-import lightTheme from '../../theme';
+import lightTheme from '../../../theme';
+
 import { ThemeProvider } from '@mui/material';
 import { CottageRounded } from '@mui/icons-material';
 import { withRouter } from 'storybook-addon-react-router-v6';

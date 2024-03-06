@@ -1,4 +1,4 @@
-import { defaultTheme } from '../../theme';
+import { defaultTheme } from '../../../theme';
 import { ThemeProvider } from '@mui/material';
 
 import HeadingSubtitle from './HeadingSubtitle';
