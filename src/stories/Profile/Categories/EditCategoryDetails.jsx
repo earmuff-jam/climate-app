@@ -34,6 +34,30 @@ const EditCategoryDetails = ({ categories }) => {
   const { classes } = useStyles();
   const [formattedCategories, setFormattedCategories] = useState([]);
 
+  const handleAddCategory = () => {
+    const isError = Boolean(
+      formattedCategories.filter(
+        (v) => v.errorMsg.length > 0 || v.value.length <= 0
+      ).length
+    );
+    if (isError) {
+      console.log('error');
+      return;
+    }
+    const draftCategory = {
+      fullWidth: true,
+      label: 'Add new category',
+      name: '',
+      error: false,
+      errorMsg: '',
+      value: '',
+      placeholder: 'Add new category',
+      required: false,
+      variant: 'standard',
+    };
+    setFormattedCategories([...formattedCategories, draftCategory]);
+  };
+
   useEffect(() => {
     if (Array.isArray(categories)) {
       const draftCategories = categories.map((v) => ({
@@ -72,24 +96,9 @@ const EditCategoryDetails = ({ categories }) => {
           ))}
         </Box>
         <Box className={classes.buttonContainer}>
-          {[
-            {
-              id: 1,
-              title: 'save',
-              onClick: () => {},
-              icon: <SaveRounded />,
-            },
-            {
-              id: 2,
-              title: 'Add Category',
-              onClick: () => {},
-              icon: <AddRounded />,
-            },
-          ].map((v) => (
-            <Button onClick={v.onClick()} endIcon={v.icon}>
-              {v.title}
-            </Button>
-          ))}
+          <Button onClick={handleAddCategory} endIcon={<SaveRounded />}>
+            {'Add category'}
+          </Button>
         </Box>
       </Box>
     </Box>
