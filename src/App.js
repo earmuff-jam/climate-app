@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Box, CssBaseline, useMediaQuery, useTheme } from '@mui/material';
 import {
@@ -30,19 +30,6 @@ const App = () => {
 
   const handleDrawerClose = () => setDrawerOpen(false);
   const handleDrawerOpen = () => matchesSmOrLarger && setDrawerOpen(true);
-
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    getMessage();
-  }, []);
-
-  async function getMessage() {
-    const result = await fetch('/api/message');
-    const json = await result.json();
-
-    setMessage(json);
-  }
 
   const navigationDrawerProps = {
     tags: [
